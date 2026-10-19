@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Node Fixture",
+            "program": "${workspaceFolder}/launch-target.js",
+            "console": "internalConsole",
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Node Fixture Duplicate",
+            "program": "${workspaceFolder}/launch-target.js",
+            "console": "internalConsole",
+            "skipFiles": ["<node_internals>/**"]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Node Fixture Compound",
+            "configurations": ["Node Fixture", "Node Fixture Duplicate"],
+            "stopAll": true
+        }
+    ]
+}

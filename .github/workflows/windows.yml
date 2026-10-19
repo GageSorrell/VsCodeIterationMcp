@@ -1,0 +1,29 @@
+name: Windows validation
+
+on:
+  push:
+    branches: [Master]
+  pull_request:
+    branches: [Master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: npm
+      - run: npm ci
+      - run: npm run ci
+      - uses: actions/upload-artifact@v4
+        with:
+          name: vscode-iteration-mcp-vsix
+          path: dist/vscode-iteration-mcp.vsix
+          if-no-files-found: error

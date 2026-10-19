@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" role="img" aria-labelledby="title desc">
+  <title id="title">VS Code Iteration MCP mark</title>
+  <desc id="desc">Ship-green and amber workspace brackets connect to a white protocol cube.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a0f1c"/>
+      <stop offset="1" stop-color="#141b2e"/>
+    </linearGradient>
+    <linearGradient id="shipGreen" x1="64" y1="72" x2="214" y2="288" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8be6b4"/>
+      <stop offset="1" stop-color="#47c98e"/>
+    </linearGradient>
+    <linearGradient id="amber" x1="296" y1="72" x2="146" y2="288" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffc45b"/>
+      <stop offset="1" stop-color="#f47a42"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="6" y="6" width="348" height="348" rx="78" fill="url(#background)"/>
+  <rect x="6.75" y="6.75" width="346.5" height="346.5" rx="77.25" fill="none" stroke="#2d3850" stroke-width="1.5"/>
+
+  <path d="M140 72H96C73.9 72 56 89.9 56 112v136c0 22.1 17.9 40 40 40h44"
+        fill="none" stroke="url(#shipGreen)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M220 72h44c22.1 0 40 17.9 40 40v136c0 22.1-17.9 40-40 40h-44"
+        fill="none" stroke="url(#amber)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <path d="M95 180h42" stroke="#55d198" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="95" cy="180" r="15" fill="#55d198"/>
+  <path d="M223 180h42" stroke="#f68a45" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="265" cy="180" r="15" fill="#f68a45"/>
+
+  <path d="m180 119 51 29-51 30-51-30 51-29Z" fill="#ffffff"/>
+  <path d="m124 158 49 29v57l-31-18c-11.1-6.4-18-18.3-18-31.2V158Z" fill="#eef5ff"/>
+  <path d="m236 158-49 29v57l31-18c11.1-6.4 18-18.3 18-31.2V158Z" fill="#dbe8ff"/>
+</svg>

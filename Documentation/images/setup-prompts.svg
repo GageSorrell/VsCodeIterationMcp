@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#1e1e1e"/>
+  <rect x="190" y="64" width="820" height="632" rx="8" fill="#252526" stroke="#454545" stroke-width="2"/>
+  <text x="240" y="124" fill="#ffffff" font-family="Segoe UI, Arial" font-size="22" font-weight="600">Add MCP Server to Agents</text>
+  <text x="240" y="158" fill="#cccccc" font-family="Segoe UI, Arial" font-size="14">Choose the agents to update. Existing configuration is detected first.</text>
+  <rect x="240" y="196" width="720" height="54" rx="4" fill="#094771"/>
+  <text x="264" y="230" fill="#ffffff" font-family="Segoe UI, Arial" font-size="16">✓  Claude Code</text>
+  <text x="720" y="230" fill="#89d185" font-family="Segoe UI, Arial" font-size="13">User config found</text>
+  <rect x="240" y="260" width="720" height="54" rx="4" fill="#2d2d30"/>
+  <text x="264" y="294" fill="#ffffff" font-family="Segoe UI, Arial" font-size="16">✓  Codex</text>
+  <text x="720" y="294" fill="#89d185" font-family="Segoe UI, Arial" font-size="13">Project config found</text>
+  <text x="240" y="364" fill="#cccccc" font-family="Segoe UI, Arial" font-size="14" font-weight="600">Installation scope</text>
+  <rect x="240" y="384" width="720" height="52" rx="4" fill="#094771"/>
+  <text x="264" y="417" fill="#ffffff" font-family="Segoe UI, Arial" font-size="16">Project</text>
+  <text x="760" y="417" fill="#cccccc" font-family="Segoe UI, Arial" font-size="13">Choose a workspace root next</text>
+  <rect x="240" y="446" width="720" height="52" rx="4" fill="#2d2d30"/>
+  <text x="264" y="479" fill="#ffffff" font-family="Segoe UI, Arial" font-size="16">User</text>
+  <rect x="240" y="508" width="720" height="52" rx="4" fill="#2d2d30"/>
+  <text x="264" y="541" fill="#ffffff" font-family="Segoe UI, Arial" font-size="16">System</text>
+  <text x="240" y="620" fill="#858585" font-family="Segoe UI, Arial" font-size="13">Esc cancels without writing. Back returns to agent selection.</text>
+  <rect x="816" y="636" width="144" height="34" rx="4" fill="#0e639c"/><text x="851" y="658" fill="#fff" font-family="Segoe UI, Arial" font-size="13">Continue</text>
+</svg>

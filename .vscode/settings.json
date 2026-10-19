@@ -1,0 +1,21 @@
+{
+    "editor.codeActionsOnSave": { },
+    "eslint.options": {
+        "overrideConfigFile": "eslint.config.js"
+    },
+    "eslint.enable": true,
+    "eslint.nodePath": "node_modules",
+    "eslint.codeActionsOnSave.rules": null,
+    "editor.formatOnSave": false,
+    "eslint.format.enable": false,
+    "explorer.excludeGitIgnore": true,
+  	"eslint.workingDirectories":
+	[
+        { "!cwd": false, "directory": "**" }
+  	],
+    "eslint.validate":
+    [
+        "javascript",
+        "typescript",
+    ]
+}

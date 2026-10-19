@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-labelledby="title">
+  <title id="title">VS Code Iteration MCP</title>
+
+  <!-- Open workspace brackets from the primary logo. -->
+  <path
+    d="M9 3.5H6.75A2.75 2.75 0 0 0 4 6.25v11.5a2.75 2.75 0 0 0 2.75 2.75H9M15 3.5h2.25A2.75 2.75 0 0 1 20 6.25v11.5a2.75 2.75 0 0 1-2.75 2.75H15"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.8"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+
+  <!-- Small connection ports retain the MCP bridge motif at sidebar scale. -->
+  <path d="M6.5 12h2.15M15.35 12h2.15" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  <circle cx="6.5" cy="12" r="1.05" fill="currentColor"/>
+  <circle cx="17.5" cy="12" r="1.05" fill="currentColor"/>
+
+  <!-- Three separated faces preserve the protocol cube without relying on color. -->
+  <path d="m12 7.15 4.05 2.3L12 11.8 7.95 9.45 12 7.15Z" fill="currentColor"/>
+  <path d="m7.7 10.35 3.75 2.17v4.55l-2.36-1.36A2.78 2.78 0 0 1 7.7 13.3v-2.95Z" fill="currentColor"/>
+  <path d="m16.3 10.35-3.75 2.17v4.55l2.36-1.36a2.78 2.78 0 0 0 1.39-2.41v-2.95Z" fill="currentColor"/>
+</svg>

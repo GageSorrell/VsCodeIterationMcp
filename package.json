@@ -1,0 +1,171 @@
+{
+  "name": "vscode-iteration-mcp",
+  "displayName": "VS Code Iteration MCP",
+  "description": "Expose controlled VS Code debugging and terminal workflows to local MCP clients.",
+  "version": "1.0.0",
+  "publisher": "gage-sorrell",
+  "homepage": "https://github.com/GageSorrell/VsCodeIterationMcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GageSorrell/VsCodeIterationMcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GageSorrell/VsCodeIterationMcp/issues"
+  },
+  "icon": "resources/icon.png",
+  "license": "MIT",
+  "engines": {
+    "vscode": ">=1.142.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "mcp",
+    "model context protocol",
+    "debugging",
+    "terminal",
+    "automation"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true,
+      "description": "The extension can be installed in an untrusted workspace, but its local MCP server starts only after the workspace is trusted."
+    },
+    "virtualWorkspaces": false
+  },
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "vscodeIterationMcp",
+          "title": "VS Code Iteration MCP",
+          "icon": "resources/sidebar-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "vscodeIterationMcp": [
+        {
+          "id": "vscodeIterationMcp.sidebar",
+          "name": "Setup",
+          "type": "webview",
+          "visibility": "visible"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "vscodeIterationMcp.showStatus",
+        "title": "VS Code Iteration MCP: Show Status"
+      },
+      {
+        "command": "vscodeIterationMcp.startServer",
+        "title": "VS Code Iteration MCP: Start Server"
+      },
+      {
+        "command": "vscodeIterationMcp.stopServer",
+        "title": "VS Code Iteration MCP: Stop Server"
+      },
+      {
+        "command": "vscodeIterationMcp.restartServer",
+        "title": "VS Code Iteration MCP: Restart Server"
+      },
+      {
+        "command": "vscodeIterationMcp.copyHttpConfig",
+        "title": "VS Code Iteration MCP: Copy HTTP Client Configuration"
+      },
+      {
+        "command": "vscodeIterationMcp.copyStdioConfig",
+        "title": "VS Code Iteration MCP: Copy Stdio Client Configuration"
+      },
+      {
+        "command": "vscodeIterationMcp.addToAgents",
+        "title": "VS Code Iteration MCP: Add MCP Server to Agents..."
+      },
+      {
+        "command": "vscodeIterationMcp.addProjectWorkspaceSettings",
+        "title": "VS Code Iteration MCP: Add MCP Server at Project Scope Using Workspace Settings..."
+      },
+      {
+        "command": "vscodeIterationMcp.installSkill",
+        "title": "VS Code Iteration MCP: Install Skill..."
+      },
+      {
+        "command": "vscodeIterationMcp.setPortOverride",
+        "title": "VS Code Iteration MCP: Set Workspace Port Override..."
+      },
+      {
+        "command": "vscodeIterationMcp.resetPortOverride",
+        "title": "VS Code Iteration MCP: Reset Workspace Port Override"
+      },
+      {
+        "command": "vscodeIterationMcp.openPortSettings",
+        "title": "VS Code Iteration MCP: Open Port Settings"
+      },
+      {
+        "command": "vscodeIterationMcp.smokeTest",
+        "title": "VS Code Iteration MCP: Smoke Test",
+        "enablement": "false"
+      }
+    ],
+    "configuration": {
+      "title": "VS Code Iteration MCP",
+      "properties": {
+        "vscodeIterationMcp.port": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535,
+          "default": 0,
+          "scope": "window",
+          "markdownDescription": "Requested port for this window's local MCP server on `127.0.0.1`. `0` selects an available port automatically. A workspace port override set from VS Code Iteration MCP takes precedence over this setting. An occupied fixed port is reported as an error; the server never falls back to another port."
+        }
+      }
+    },
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "vscodeIterationMcp.server",
+        "label": "VS Code Iteration MCP"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint ./Source",
+    "build": "node node_modules/typescript/bin/tsc -p tsconfig.json",
+    "check": "node node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "test:unit": "npm run build && node --test \"dist/Test/Unit/**/*.test.js\"",
+    "test:integration": "npm run build && node dist/Test/RunTest.js",
+    "test:vsix": "npm run package && node dist/Test/RunVsixTest.js",
+    "test:clean-profile": "npm run package && node dist/Test/RunCleanProfileTest.js",
+    "inspect:vsix": "npm run package && node Script/InspectVsix.mjs",
+    "validate:release": "node Script/ValidateRelease.mjs",
+    "ci": "npm run validate:release && npm run check && npm test && npm run test:integration && npm run test:vsix && npm run test:clean-profile",
+    "test": "npm run test:unit",
+    "package": "npm run build && vsce package --readme-path ReadMe.md --out dist/vscode-iteration-mcp.vsix",
+    "vscode:prepublish": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "effect": "4.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3.3.6",
+    "@sorrell/eslint-config": "2.5.0",
+    "@types/mocha": "10.0.10",
+    "@types/node": "24.8.1",
+    "@types/vscode": "1.140.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "3.7.1",
+    "eslint": "9.39.5",
+    "eslint-plugin-react-perf": "3.3.3",
+    "mocha": "11.7.4",
+    "typescript": "6.0.3"
+  }
+}
